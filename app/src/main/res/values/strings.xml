@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">SOS</string>
+    <string name="burn">
+        <b>a.Cool the burn.</b>
+        <br>  Hold the burned area under cool (not cold) running water
+            or apply a cool, wet compress until the pain eases.
+            Donot use ice.Putting ice directly on a burn can
+            cause further damage to the tissue.</br>
+        <b>b.Apply lotion.</b>
+        <br>Once a burn is completely cooled, apply a lotion,
+            such as one that contains aloe vera or a moisturizer.
+            This helps prevent drying and provides relief.</br>
+        <b>c.Bandage the burn.</b>
+        <br>Cover the burn with a sterile gauze bandage (not
+            fluffy cotton).Wrap it loosely to avoid putting pressure on
+            burned skin.Bandaging keeps air off the area, reduces
+            pain and protects blistered skin.</br>
+        <b>d.Take a pain reliever. </b>
+        <br>Over-the-counter medications, such as ibuprofen
+            (Advil, Motrin IB, others), naproxen sodium (Aleve)
+            or acetaminophen (Tylenol, others), can help relieve pain.</br>
+
+
+
+
+    </string>
+    <string name="bone">
+        <b>First aid</b>
+        <br><b>A.</b>Keep the person still do not move them unless there is
+            an immediate danger, especially if you suspect fracture
+            of the skull, spine, ribs, pelvis or upper leg.</br>
+        <br><b>B.</b>Attend to any bleeding wounds first. Stop the bleeding
+            by pressing firmly on the site with a clean dressing.
+            If a bone is protruding, apply pressure around the edges
+            of the wound.</br>
+        <br><b>C.</b>For a limb fracture, provide support and comfort such
+            as a pillow under the lower leg or forearm. However,
+            do not cause further pain or unnecessary movement of
+            the broken bone.</br>
+        <br><b>D.</b>Apply a splint to support the limb. Splints do not
+            have to be professionally manufactured. Items like
+            wooden boards and folded magazines can work for some
+            fractures. You should immobilise the limb above and
+            below the fracture.</br>
+        <br><b>E.</b>Stop the person from eating or drinking anything
+            until they are seen by a health care professional in
+            case they need surgery.</br>
+
+
+
+    </string>
+    <string name="bleed">
+        <b>First Aid</b>
+        <br><b>A.</b>Lie the person down. If a limb is injured,
+            raise the injured area above the level of the person’s
+            heart (if possible).</br>
+        <br><b>B.</b>Get the person to apply direct pressure to
+            the wound with their hand or hands to stem the
+            blood flow.If the person can’t do it, apply direct 
+            pressure yourself.</br>
+        <br><b>C.</b>If an object is embedded in the wound, do not remove it.
+            Apply pressure around the object.</br>
+        <br><b>D.</b>If blood saturates the initial dressing, do not remove it.
+            Add fresh padding over the top and secure with a 
+            bandage.</br>
+    </string>
+    <string name="add">
+        <br><b>1.</b>Add emergency contact name</br>
+        <br><b>2.</b>Add emergency contact number</br>
+        <br><b>3.</b>Save contact to list</br>
+        <br><b>4.</b>Add emergency contact from </br>
+            <br>contact list</br>
+
+    </string>
+    <string name="message">
+        <br><b>1.</b>Message appear here</br>
+        <br><b>2.</b>Enter your message</br>
+        <br><b>3.</b>Save message</br>
+        <br><b>4.</b>Delete message </br>
+            <br>contact list</br>
+
+    </string>
+    <string name="contact">
+        <br><b>1.</b>Long press to delete contact</br>
+
+    </string>
+    <string name="help">
+        <br><b>1.</b>Click call to automatically call</br>
+        <br>the number</br>
+
+    </string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_directmap">directmap</string>
+    <string name="i_am_in_danger_i_need_help_please_urgently_reach_me_out_here_are_my_coordinates">I am in DANGER, i need help. Please urgently reach me out.</string>
+</resources>

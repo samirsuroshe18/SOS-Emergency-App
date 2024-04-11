@@ -2,7 +2,7 @@
 # Project Name: SOS Emergency App <br>
 <div align="center">
   <img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/5084bee7-56b8-4217-83ce-fd628879411f" width="80" height="80" >
-  <a href="https://github.com/samirsuroshe18/WellBeing-app---Android-studio/releases/latest/">
+  <a href="https://github.com/samirsuroshe18/SOS-Emergency-App/releases/tag/1.0.0">
 <img src="https://github.com/samirsuroshe18/WellBeing-app---Android-studio/assets/130245723/f2d2622b-2fd1-4576-af9e-68ec0e56c79e" height="80">
 </a>
 </div>

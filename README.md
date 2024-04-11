@@ -15,7 +15,7 @@
 <img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/cb79a896-821c-4b15-8d30-9d72855100ea" width="188" >
 
 ## Project Overview
-Our SOS application is designed to provide quick assistance during emergencies. It allows users to add and manage emergency contacts, customize emergency messages, access helpline numbers, and receive first aid information. The highlight of the app is the Emergency Mode feature, which, when activated, sends an SOS message along with the user's current location to registered emergency contacts. It was created in Dec 2023 and is available for download on Github. Application can be found [here](https://github.com/samirsuroshe18/WellBeing-app---Android-studio/releases/latest/). To use the app, simply download it from the github, and use it.
+Our SOS application is designed to provide quick assistance during emergencies. It allows users to add and manage emergency contacts, customize emergency messages, access helpline numbers, and receive first aid information. The highlight of the app is the Emergency Mode feature, which, when activated, sends an SOS message along with the user's current location to registered emergency contacts. It was created in Dec 2023 and is available for download on Github. Application can be found [here](https://github.com/samirsuroshe18/SOS-Emergency-App/releases/tag/1.0.0). To use the app, simply download it from the github, and use it.
 
 ## Configuration Instructions
 To achieve optimum performance, we recommend the following computer and software configurations:

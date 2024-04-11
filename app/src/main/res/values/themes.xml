@@ -1,8 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.SOS" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Base.Theme.SOS" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<!--        <item name="colorPrimary">#FFDBCF</item>-->
+<!--        <item name="colorSecondary">#605C71</item>-->
+<!--        <item name="colorSurface">#ffffff</item>-->
+<!--        <item name="colorTertiary">#7C5263</item>-->
+<!--        <item name="colorError">#BA1B1A</item>-->
     </style>
 
     <style name="Theme.SOS" parent="Base.Theme.SOS" />

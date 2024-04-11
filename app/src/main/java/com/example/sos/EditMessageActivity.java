@@ -1,6 +1,7 @@
 package com.example.sos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,12 +11,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class EditMessageActivity extends AppCompatActivity {
-
-    EditText etMessage;
-    Button btnSave;
+    TextInputEditText etMessage;
+    AppCompatButton btnSave;
     String editMsg;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

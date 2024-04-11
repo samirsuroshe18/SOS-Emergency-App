@@ -10,21 +10,26 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.google.android.material.button.MaterialButton;
 
 public class RegisterNumberActivity extends AppCompatActivity {
     private static final int PICK_CONTACT = 1;
     private static final int REQUEST_READ_CONTACTS_PERMISSION = 100;
     EditText contactName, contactNumber;
-    Button btnAddContact, btnContactBook;
+    AppCompatButton btnAddContact, btnContactBook;
     DatabaseHelper databaseHelper;
 
     @Override
@@ -96,21 +101,34 @@ public class RegisterNumberActivity extends AppCompatActivity {
 
                 Uri contactData = data.getData();
                 Cursor c = managedQuery(contactData, null, null, null, null);
-                if (c.moveToFirst()) {
 
-                    String id = c.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts._ID));
-                    String hasPhone = c.getString(c.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
-                    String phone = null;
-                    try {
-                        if (hasPhone.equalsIgnoreCase("1")) {
-                            Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id, null, null);
-                            phones.moveToFirst();
-                            phone = phones.getString(phones.getColumnIndex("data1"));
+                if (c != null && c.getCount() > 0) {
+                    c.moveToFirst();
+                    int nameColIndex = c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME);
+                    int numColIndex = c.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER);
+                    int idColIndex = c.getColumnIndex(ContactsContract.Contacts._ID);
+
+                    if (nameColIndex >= 0 && idColIndex >= 0 && numColIndex >= 0) {
+                        String contactName = c.getString(nameColIndex);
+                        String contactId = c.getString(idColIndex);
+                        String contactNum = c.getString(numColIndex);
+                        String phone="";
+
+                        if (contactNum.equalsIgnoreCase("1")) {
+                            Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + contactId, null, null);
+                            if (phones != null && phones.getCount() > 0){
+                                phones.moveToFirst();
+                                int index = phones.getColumnIndex("data1");
+                                if (index>=0){
+                                    phone = phones.getString(index);
+                                }
+
+                            }
+
                         }
-                        String name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
                         int a = databaseHelper.count();
                         if (a < 5) {
-                            boolean checkData = databaseHelper.insertDataFunc(name, phone);
+                            boolean checkData = databaseHelper.insertDataFunc(contactName, phone);
 
                             if (checkData) {
                                 Toast.makeText(RegisterNumberActivity.this, "Contact is registered", Toast.LENGTH_SHORT).show();
@@ -118,7 +136,9 @@ public class RegisterNumberActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterNumberActivity.this, "Contact doesn't registered", Toast.LENGTH_SHORT).show();
                             }
                         }
-                    } catch (Exception ex) {
+                        Log.i("content_provider", "Name : " + contactName + " Number : " + phone);
+                    } else {
+                        Toast.makeText(this, "Column not found", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -127,7 +147,7 @@ public class RegisterNumberActivity extends AppCompatActivity {
 
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_READ_CONTACTS_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {

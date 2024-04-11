@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Instructions"
     android:orientation="vertical"
-    android:id="@+id/lay1"
-    android:background="#5CBAF8">
+    android:id="@+id/lay1">
 
     <LinearLayout
         android:layout_width= "match_parent"
@@ -17,48 +16,51 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Instructions"
-            android:textSize="40dp"
-            android:textColor="@color/black"
+            android:text="SOS App User Guide"
+            android:textSize="30sp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:padding="7.5dp"/>
+            android:layout_marginTop="20dp"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Contact"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/layout_background"
-            android:padding="7.5dp"/>
+            android:text="@string/about_app"
+            android:padding="10dp"
+            android:textSize="16sp"/>
 
-        <LinearLayout
-            android:id="@+id/lay3"
-            android:layout_width="370dp"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/guide_background"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="6dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="200dp"
-                android:background="@drawable/add_contact" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/lay3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="@string/add"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-        </LinearLayout>
+                android:orientation="horizontal"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/add_contact" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/add"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -4,34 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_error"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/start"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/button"
-        android:backgroundTint="#95E464"
         android:onClick="startServiceV"
+        android:backgroundTint="?attr/colorError"
         android:text="Start"
-        android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:cornerRadius="10dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/stop"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button"
-        android:backgroundTint="#95E464"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="stopServiceV"
         android:text="Stop"
-        android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:cornerRadius="10dp" />
 
 

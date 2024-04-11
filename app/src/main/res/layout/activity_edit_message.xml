@@ -6,38 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EditMessageActivity"
-    android:gravity="center"
-    android:background="#1F7FD1">
+    android:gravity="center">
 
-    <EditText
-        android:id="@+id/etMessage"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:ems="15"
-        android:textColor="#0C0C0C"
-        android:text="@string/i_am_in_danger_i_need_help_please_urgently_reach_me_out_here_are_my_coordinates"
-        android:inputType="text|textMultiLine"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/textbackground"
-        android:padding="20dp"
-        android:autofillHints="" />
+        android:layout_marginBottom="20dp"
+        android:hint="Message">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="5dp">
-
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Save"
-            android:background="@drawable/button"/>
+            android:text="@string/i_am_in_danger_i_need_help_please_urgently_reach_me_out_here_are_my_coordinates" />
 
-    </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button"
+            android:text="Save"/>
 
 </LinearLayout>

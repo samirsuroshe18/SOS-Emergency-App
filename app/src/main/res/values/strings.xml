@@ -1,95 +1,91 @@
 <resources>
     <string name="app_name">SOS</string>
     <string name="burn">
-        <b>a.Cool the burn.</b>
-        <br>  Hold the burned area under cool (not cold) running water
-            or apply a cool, wet compress until the pain eases.
-            Donot use ice.Putting ice directly on a burn can
-            cause further damage to the tissue.</br>
-        <b>b.Apply lotion.</b>
-        <br>Once a burn is completely cooled, apply a lotion,
-            such as one that contains aloe vera or a moisturizer.
-            This helps prevent drying and provides relief.</br>
-        <b>c.Bandage the burn.</b>
-        <br>Cover the burn with a sterile gauze bandage (not
-            fluffy cotton).Wrap it loosely to avoid putting pressure on
-            burned skin.Bandaging keeps air off the area, reduces
-            pain and protects blistered skin.</br>
-        <b>d.Take a pain reliever. </b>
-        <br>Over-the-counter medications, such as ibuprofen
-            (Advil, Motrin IB, others), naproxen sodium (Aleve)
-            or acetaminophen (Tylenol, others), can help relieve pain.</br>
-
-
-
-
+        <b>A. \t Cool the burn : </b>
+        Hold the burned area under \n\t\t\t cool (not cold) running water
+        or apply a cool, wet \n\t\t\t compress until the pain eases.
+        Do not use \n\t\t\t ice. Putting ice directly on a burn can
+        cause \n\t\t\t further damage to the tissue.\n\n
+        <b>B. \t Apply lotion : </b>
+        Once a burn is completely cooled, \n\t\t\t apply a lotion,
+        such as one that contains aloe \n\t\t\t vera or a moisturizer.
+        This helps prevent drying \n\t\t\t and provides relief.\n\n
+        <b>C. \t Bandage the burn : </b>
+        Cover the burn with a sterile \n\t\t\t gauze bandage (not
+        fluffy cotton).Wrap it \n\t\t\t loosely to avoid putting pressure on
+        burned \n\t\t\t skin.Bandaging keeps air off the area, reduces \n\t\t\t
+        pain and protects blistered skin.\n\n
+        <b>D. \t Take a pain reliever : </b>
+        Over-the-counter \n\t\t\t medications, such as ibuprofen
+        (Advil, Motrin IB, \n\t\t\t others), naproxen sodium (Aleve)
+        or \n\t\t\t acetaminophen (Tylenol, others), can help relieve \n\t\t\t pain.\n
     </string>
+
     <string name="bone">
-        <b>First aid</b>
-        <br><b>A.</b>Keep the person still do not move them unless there is
-            an immediate danger, especially if you suspect fracture
-            of the skull, spine, ribs, pelvis or upper leg.</br>
-        <br><b>B.</b>Attend to any bleeding wounds first. Stop the bleeding
-            by pressing firmly on the site with a clean dressing.
-            If a bone is protruding, apply pressure around the edges
-            of the wound.</br>
-        <br><b>C.</b>For a limb fracture, provide support and comfort such
-            as a pillow under the lower leg or forearm. However,
-            do not cause further pain or unnecessary movement of
-            the broken bone.</br>
-        <br><b>D.</b>Apply a splint to support the limb. Splints do not
-            have to be professionally manufactured. Items like
-            wooden boards and folded magazines can work for some
-            fractures. You should immobilise the limb above and
-            below the fracture.</br>
-        <br><b>E.</b>Stop the person from eating or drinking anything
-            until they are seen by a health care professional in
-            case they need surgery.</br>
-
-
-
+        <b>First aid</b>\n\n
+        <b>A.</b> \t\t Keep the person still do not move them unless \n\t\t\t\t there is
+            an immediate danger, especially if you \n\t\t\t\t suspect fracture
+            of the skull, spine, ribs, pelvis \n\t\t\t\t or upper leg.\n\n
+        <b>B.</b> \t\t Attend to any bleeding wounds first. Stop the \n\t\t\t\t bleeding
+            by pressing firmly on the site with a \n\t\t\t\t clean dressing.
+            If a bone is protruding, apply \n\t\t\t\t pressure around the edges
+            of the wound.\n\n
+        <b>C.</b> \t\t For a limb fracture, provide support and \n\t\t\t\t comfort such
+            as a pillow under the lower leg or \n\t\t\t\t forearm. However,
+            do not cause further pain or \n\t\t\t\t unnecessary movement of
+            the broken bone.\n\n
+        <b>D.</b> \t\t Apply a splint to support the limb. Splints do \n\t\t\t\t not
+            have to be professionally manufactured. \n\t\t\t\t Items like
+            wooden boards and folded \n\t\t\t\t magazines can work for some
+            fractures. You \n\t\t\t\t should immobilise the limb above and
+            below \n\t\t\t\t the fracture.\n\n
+        <b>E.</b> \t\t Stop the person from eating or drinking \n\t\t\t\t anything
+            until they are seen by a health care \n\t\t\t\t professional in
+            case they need surgery.\n
     </string>
+
     <string name="bleed">
-        <b>First Aid</b>
-        <br><b>A.</b>Lie the person down. If a limb is injured,
-            raise the injured area above the level of the person’s
-            heart (if possible).</br>
-        <br><b>B.</b>Get the person to apply direct pressure to
-            the wound with their hand or hands to stem the
-            blood flow.If the person can’t do it, apply direct 
-            pressure yourself.</br>
-        <br><b>C.</b>If an object is embedded in the wound, do not remove it.
-            Apply pressure around the object.</br>
-        <br><b>D.</b>If blood saturates the initial dressing, do not remove it.
-            Add fresh padding over the top and secure with a 
-            bandage.</br>
+        <b>First Aid</b>\n\n
+        <b>A.</b> \t\t Lie the person down. If a limb is injured,
+            raise \n\t\t\t\t the injured area above the level of the person’s.\n\n
+        <b>B.</b> \t\t Get the person to apply direct pressure to
+            the \n\t\t\t\t wound with their hand or hands to stem the \n\t\t\t\t
+            blood flow.If the person can’t do it, apply direct \n\t\t\t\t
+            pressure yourself.\n\n
+        <b>C.</b> \t\t If an object is embedded in the wound, do not \n\t\t\t\t remove it.
+            Apply pressure around the object.\n\n
+        <b>D.</b> \t\t If blood saturates the initial dressing, do not \n\t\t\t\t remove it.
+            Add fresh padding over the top and \n\t\t\t\t secure with a
+            bandage.\n
     </string>
+
     <string name="add">
         <br><b>1.</b>Add emergency contact name</br>
         <br><b>2.</b>Add emergency contact number</br>
         <br><b>3.</b>Save contact to list</br>
         <br><b>4.</b>Add emergency contact from </br>
-            <br>contact list</br>
-
+        <br>contact list</br>
     </string>
+
     <string name="message">
         <br><b>1.</b>Message appear here</br>
         <br><b>2.</b>Enter your message</br>
         <br><b>3.</b>Save message</br>
         <br><b>4.</b>Delete message </br>
-            <br>contact list</br>
-
+        <br>contact list</br>
     </string>
+
     <string name="contact">
         <br><b>1.</b>Long press to delete contact</br>
-
     </string>
+
     <string name="help">
         <br><b>1.</b>Click call to automatically call</br>
         <br>the number</br>
-
     </string>
+
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_directmap">directmap</string>
     <string name="i_am_in_danger_i_need_help_please_urgently_reach_me_out_here_are_my_coordinates">I am in DANGER, i need help. Please urgently reach me out.</string>
+    <string name="about_app">Welcome to our SOS application! This user manual will guide you through the functionalities of our app so that you can utilize it effectively during emergencies.</string>
 </resources>

@@ -94,7 +94,7 @@ public class ServiceMine extends Service implements SensorEventListener {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
+        super.onStartCommand(intent,flags,startId);
         if (accelerometer != null) {
             // Register the sensor listener for the accelerometer sensor
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
@@ -102,6 +102,7 @@ public class ServiceMine extends Service implements SensorEventListener {
 
         if (intent.getAction().equalsIgnoreCase("STOP")) {
             if(isRunning) {
+                sensorManager.unregisterListener(this);
                 this.stopForeground(true);
                 this.stopSelf();
             }
@@ -119,7 +120,7 @@ public class ServiceMine extends Service implements SensorEventListener {
                 Notification notification = new Notification.Builder(this, "MYID")
                         .setContentTitle("You are protected")
                         .setContentText("We are there for you")
-                        .setSmallIcon(R.drawable.help_icon)
+                        .setSmallIcon(R.drawable.siren)
                         .setContentIntent(pendingIntent)
                         .build();
                 this.startForeground(115, notification);
@@ -127,7 +128,7 @@ public class ServiceMine extends Service implements SensorEventListener {
                 return START_NOT_STICKY;
             }
         }
-        return super.onStartCommand(intent,flags,startId);
+        return START_STICKY;
     }
 
     @Override

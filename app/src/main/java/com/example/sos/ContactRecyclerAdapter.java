@@ -19,7 +19,7 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
     Context context;
     ArrayList<ContactModel> modelArrayList;
     DatabaseHelper databaseHelper;
-    ContactModel model = new ContactModel();
+    ContactModel model;
 
     public ContactRecyclerAdapter(Context context, ArrayList<ContactModel> modelArrayList) {
         this.context = context;
@@ -35,9 +35,11 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
 
     @Override
     public void onBindViewHolder(@NonNull ContactRecyclerAdapter.ViewHolder holder, int position) {
-        String id = (modelArrayList.get(position).id);
-            ((ViewHolder) holder).name.setText(modelArrayList.get(position).name);
-            ((ViewHolder) holder).number.setText(modelArrayList.get(position).number);
+        model = modelArrayList.get(position);
+
+        String id = model.getId();;
+            ((ViewHolder) holder).name.setText(model.getName());
+            ((ViewHolder) holder).number.setText(model.getNumber());
 
             holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -51,8 +53,8 @@ public class ContactRecyclerAdapter extends RecyclerView.Adapter<ContactRecycler
                                     boolean checkData = databaseHelper.deleteData(id);
                                     if (checkData){
                                         Toast.makeText(context, "Data is Deleted", Toast.LENGTH_SHORT).show();
-                                        modelArrayList.remove(position);
-                                        notifyItemRemoved(position);
+                                        modelArrayList.remove(model);
+                                        notifyItemRemoved(modelArrayList.indexOf(model));
                                         notifyDataSetChanged();
                                     }
                                     else {

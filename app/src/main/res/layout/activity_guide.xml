@@ -1,121 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".sosguide"
-    >
+    tools:context=".guide">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SOS Guides"
-            android:textSize="50dp"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:background="@drawable/layout_background"
+            android:layout_marginTop="20dp"
             android:padding="10dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/black"
-            />
-        <LinearLayout
+            android:text="Emergency Guides"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/guide_background"
-            android:padding="5dp"
-            android:id="@+id/burnlay"
-            android:layout_marginTop="20dp"
-            >
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            app:cardElevation="6dp"
+            android:layout_marginHorizontal="20dp">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/burnlay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.Burn"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/burn"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"
-                />
+                android:orientation="vertical"
+                android:padding="10dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Burn"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/burn" />
+            </LinearLayout>
 
+        </com.google.android.material.card.MaterialCardView>
 
-        </LinearLayout>
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/guide_background"
-            android:padding="5dp"
-            android:id="@+id/bonelay"
-            android:layout_marginTop="20dp"
-            >
+            android:layout_marginBottom="20dp"
+            app:cardElevation="6dp"
+            android:layout_marginHorizontal="20dp">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/layout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2.Bone Fracture"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/bone"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. Bone Fracture"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/bone" />
+            </LinearLayout>
 
+        </com.google.android.material.card.MaterialCardView>
 
-
-        </LinearLayout>
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/guide_background"
-            android:padding="5dp"
-            android:id="@+id/bleedlay"
-            android:layout_marginTop="20dp"
-            >
+            android:layout_marginBottom="20dp"
+            app:cardElevation="6dp"
+            android:layout_marginHorizontal="20dp">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/layout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3.Severe external bleeding"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/bleed"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. Severe External Bleeding"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/bleed" />
+            </LinearLayout>
 
+        </com.google.android.material.card.MaterialCardView>
 
-
-        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

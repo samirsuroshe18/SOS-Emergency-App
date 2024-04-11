@@ -1,11 +1,14 @@
 
 # Project Name: SOS Emergency App <br>
 <div align="center">
-  <img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/a7d89841-53dc-4d63-b305-b2d74a4254e7" width="80" height="80" >
+  <img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/5084bee7-56b8-4217-83ce-fd628879411f" width="80" height="80" >
   <a href="https://github.com/samirsuroshe18/WellBeing-app---Android-studio/releases/latest/">
 <img src="https://github.com/samirsuroshe18/WellBeing-app---Android-studio/assets/130245723/f2d2622b-2fd1-4576-af9e-68ec0e56c79e" height="80">
 </a>
 </div>
+
+![Screenshot_20240411_174901](https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/a23e9439-d5be-4ec0-9a23-3a5d8d12ad3c)
+
 
 ## Project Overview
 The Wellbeing App is an Android application designed to promote mental and emotional wellbeing by encouraging users, particularly teenagers and people, to engage in positive activities and tasks. It was created to address the growing need for tools that support mental health and foster a sense of community and positivity. The app allows users to create tasks related to good deeds, earn points (wellpoints) for completing tasks, and connect with others who share similar interests in promoting wellbeing. The project is important to us as it aims to make a positive impact on the lives of individuals and communities. It was created in Feb 2024 and is available for download on Github. Application can be found [here](https://github.com/samirsuroshe18/WellBeing-app---Android-studio/releases/latest/). To use the app, simply download it from the github, create an account, and start completing tasks to earn wellpoints.

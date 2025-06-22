@@ -18,7 +18,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         DynamicColors.applyToActivitiesIfAvailable(getApplication());
         setContentView(R.layout.activity_home);
-
         registerContact = findViewById(R.id.registerContact);
         editMessage = findViewById(R.id.editMessage);
         btnSosService = findViewById(R.id.btnSosService);
@@ -26,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         helpline = findViewById(R.id.helpline);
         Info = findViewById(R.id.Info);
         showContact = findViewById(R.id.showContact);
+
 
         registerContact.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(HomeActivity.this, guide.class);
+                Intent intent = new Intent(HomeActivity.this, Guide.class);
                 startActivity(intent);
             }
         });
@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(HomeActivity.this, soscall.class);
+                Intent intent = new Intent(HomeActivity.this, SosCall.class);
                 startActivity(intent);
             }
         });

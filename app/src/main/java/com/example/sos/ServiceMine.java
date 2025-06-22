@@ -148,6 +148,8 @@ public class ServiceMine extends Service implements SensorEventListener {
                         vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
                     }
 
+
+
                     db = new DatabaseHelper(ServiceMine.this);
                     ArrayList<ContactModel> list = db.fetchData();
                     SharedPreferences sp = getSharedPreferences("message", MODE_PRIVATE);

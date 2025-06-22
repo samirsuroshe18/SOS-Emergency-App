@@ -1,7 +1,5 @@
 package com.example.sos;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -13,14 +11,17 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import android.Manifest;
 
+import com.google.android.material.appbar.MaterialToolbar;
 
-public class soscall extends AppCompatActivity {
 
+public class SosCall extends AppCompatActivity {
+    MaterialToolbar appBar;
     Button but1,but2,but3,but4,but5;
     private static final int REQUEST_CALL_PHONE_PERMISSION = 1;
 
@@ -29,7 +30,8 @@ public class soscall extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_soscall);
-
+        appBar = findViewById(R.id.toolbar);
+        setSupportActionBar(appBar);
         but1 = findViewById(R.id.callambu);
         but2 = findViewById(R.id.callfire);
         but3 = findViewById(R.id.callpol);
@@ -84,7 +86,7 @@ public class soscall extends AppCompatActivity {
                             .setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    ActivityCompat.requestPermissions(soscall.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL_PHONE_PERMISSION);
+                                    ActivityCompat.requestPermissions(SosCall.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL_PHONE_PERMISSION);
                                 }
                             }).show();
                 } else {
@@ -99,7 +101,7 @@ public class soscall extends AppCompatActivity {
                             }).setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    Toast.makeText(soscall.this, "Call permission denied", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SosCall.this, "Call permission denied", Toast.LENGTH_SHORT).show();
                                     dialog.dismiss();
                                 }
                                 }).show();
@@ -125,5 +127,15 @@ public class soscall extends AppCompatActivity {
         Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
         intent.setData(Uri.parse("package:" + getPackageName()));
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            // Handle back button press
+            onBackPressed(); // or finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

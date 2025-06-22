@@ -3,13 +3,10 @@ package com.example.sos;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.view.WindowManager;
 
-public class splash_screen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +16,7 @@ public class splash_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent I = new Intent(splash_screen.this, HomeActivity.class);
+                Intent I = new Intent(SplashScreen.this, HomeActivity.class);
                 startActivity(I);
                 finish();
             }

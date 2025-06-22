@@ -2,4 +2,33 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimaryContainer">#BB86FC</color>
+    <color name="colorError">#B00020</color>
+    <color name="colorOnSurfaceVariant">#49454F</color>
+    <color name="colorSurfaceVariant">#E7E0EC</color>     <!-- Emergency Red -->
+
+    <!-- Primary Theme Colors for SOS App -->
+    <color name="colorPrimary">#E53E3E</color>         <!-- Emergency Red -->
+    <color name="colorPrimaryDark">#C53030</color>      <!-- Darker Red -->
+    <color name="colorSecondary">#FF6B6B</color>        <!-- Light Red/Pink -->
+    <color name="colorAccent">#38A169</color>           <!-- Safety Green -->
+
+    <!-- Background Colors -->
+    <color name="background_light">#F7FAFC</color>      <!-- Very Light Gray -->
+    <color name="info_card_bg">#FFF5F5</color>          <!-- Light Red Tint -->
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1A202C</color>          <!-- Dark Gray -->
+    <color name="text_secondary">#4A5568</color>        <!-- Medium Gray -->
+    <color name="text_light">#A0AEC0</color>            <!-- Light Gray -->
+
+    <!-- Status Colors -->
+    <color name="success_green">#38A169</color>
+    <color name="warning_orange">#DD6B20</color>
+    <color name="error_red">#E53E3E</color>
+
+    <!-- Card and Surface Colors -->
+    <color name="surface_white">#FFFFFF</color>
+    <color name="surface_light">#F7FAFC</color>
+    <color name="divider_light">#E2E8F0</color>
 </resources>

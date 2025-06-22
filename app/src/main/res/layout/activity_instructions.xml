@@ -1,208 +1,374 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Instructions"
-    android:orientation="vertical"
-    android:id="@+id/lay1">
+    android:background="?attr/colorSurface"
+    tools:context=".Instructions">
 
-    <LinearLayout
-        android:layout_width= "match_parent"
+    <!-- App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lay2"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SOS App User Guide"
-            android:textSize="30sp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"/>
+        android:elevation="4dp"
+        app:elevation="4dp">
 
-        <TextView
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="User Guide"
+            app:titleTextColor="?attr/colorOnPrimary"
+            app:navigationIcon="@drawable/arrow_back"
+            app:navigationIconTint="?attr/colorOnPrimary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/lay2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/about_app"
-            android:padding="10dp"
-            android:textSize="16sp"/>
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="?attr/colorPrimaryContainer"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="6dp">
-
-            <LinearLayout
-                android:id="@+id/lay3"
+            <!-- Header Section -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="10dp">
+                android:layout_margin="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="200dp"
-                    android:background="@drawable/add_contact" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:text="@string/add"
-                    android:textSize="15sp" />
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
+
+                    <!-- App Icon -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="40dp"
+                        app:cardElevation="2dp"
+                        app:strokeWidth="0dp"
+                        app:cardBackgroundColor="?attr/colorPrimary"
+                        android:layout_marginBottom="16dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/emergency"
+                            app:tint="?attr/colorOnPrimary" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SOS App User Guide"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Subtitle -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your safety companion"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:alpha="0.8"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- About App Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Section Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_info"
+                        app:tint="?attr/colorPrimary"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="About the App"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface" />
+
+                </LinearLayout>
+
+                <!-- About Content Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/colorOutlineVariant"
+                    app:cardBackgroundColor="?attr/colorSurface">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_app"
+                        android:padding="20dp"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:lineSpacingExtra="4dp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
             </LinearLayout>
 
-        </com.google.android.material.card.MaterialCardView>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contact List"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/layout_background"
-            android:padding="7.5dp"/>
-        <LinearLayout
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/lay4"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/guide_background"
-            android:padding="10dp"
-            >
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:background="@drawable/contactt"
-                android:layout_marginTop="30dp"/>
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Instructions Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/contact"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                />
-        </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Message"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/layout_background"
-            android:padding="7.5dp"/>
-        <LinearLayout
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/lay5"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/guide_background"
-            android:padding="10dp"
-            >
+                android:orientation="vertical"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="200dp"
-                android:background="@drawable/edit_message"
-                />
-            <TextView
-                android:layout_width="wrap_content"
+                <!-- Section Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/event_list"
+                        app:tint="?attr/colorSecondary"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How to Use"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface" />
+
+                </LinearLayout>
+
+                <!-- Steps Content Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/colorOutlineVariant"
+                    app:cardBackgroundColor="?attr/colorSurface">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/steps"
+                        android:padding="20dp"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorOnSurface"
+                        android:lineSpacingExtra="4dp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Quick Tips Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/message"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                />
+                android:orientation="vertical"
+                android:layout_marginHorizontal="16dp">
+
+                <!-- Section Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/lightbulb"
+                        app:tint="?attr/colorTertiary"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Safety Tips"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnSurface" />
+
+                </LinearLayout>
+
+                <!-- Tips Cards -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Tip 1 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="16dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_check_circle"
+                                app:tint="?attr/colorSecondary"
+                                android:layout_marginEnd="12dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Test your emergency contacts regularly"
+                                android:textSize="14sp"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Tip 2 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="16dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_check_circle"
+                                app:tint="?attr/colorSecondary"
+                                android:layout_marginEnd="12dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Keep your location services enabled"
+                                android:textSize="14sp"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Tip 3 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant"
+                        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="16dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_check_circle"
+                                app:tint="?attr/colorSecondary"
+                                android:layout_marginEnd="12dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Customize your emergency message"
+                                android:textSize="14sp"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Help Line Number"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/layout_background"
-            android:padding="7.5dp"/>
-        <LinearLayout
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/lay6"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/guide_background"
-            android:padding="10dp"
-            >
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="200dp"
-                android:background="@drawable/helpline"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/help"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                />
-        </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SOS Guides"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/layout_background"
-            android:padding="7.5dp"/>
-        <LinearLayout
-            android:layout_width="370dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/lay7"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/guide_background"
-            android:padding="10dp"
-            >
+    </androidx.core.widget.NestedScrollView>
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="200dp"
-                android:background="@drawable/guide"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="First Aid Guide"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_marginLeft="10dp"
-                />
-        </LinearLayout>
-
-    </LinearLayout>
-
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

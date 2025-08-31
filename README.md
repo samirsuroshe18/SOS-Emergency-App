@@ -1,61 +1,68 @@
+# 🚨 SOS Emergency App
 
-# Project Name: SOS Emergency App <br>
-<div align="center">
+The SOS Emergency App is designed to provide quick assistance during emergencies. It allows users to add and manage emergency contacts, customize emergency messages, access helpline numbers, and receive first aid information. The highlight of the app is the Emergency Mode feature, which, when activated, sends an SOS message along with the user's current location to registered emergency contacts.
+
+## 🎥 Demo
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=ScsVUOd-dFw" target="_blank">
+    <img src="https://img.shields.io/badge/Watch%20on%20YouTube-red?logo=youtube&logoColor=white&style=for-the-badge" alt="Watch on YouTube"/>
+  </a>
+</p>
+
+## 📸 Screenshots
+
+<p align="center">
+
+  <img width="188" alt="home" src="https://github.com/user-attachments/assets/eff4749f-46b6-4e84-9a6f-e2ebf2a4c6dc" />
+  <img width="188" alt="emergency-mode" src="https://github.com/user-attachments/assets/a39807fb-593f-4ee4-bf30-7be675a125b8" />
+  <img width="188" alt="add-contact" src="https://github.com/user-attachments/assets/48c31c1e-9c03-41fc-a1b1-391ba8927514" />
+  <img width="188" alt="contact-list" src="https://github.com/user-attachments/assets/cf05342e-f1d4-4070-959e-bb77a7cfd288" />
+  <img width="188" alt="edit-message" src="https://github.com/user-attachments/assets/679176c1-fa8f-47aa-ad5e-b1b94a0ed263" />
+  <img width="188" alt="helpline" src="https://github.com/user-attachments/assets/3a405148-3ad3-4524-867e-9cc867dd442f" />
+  <img width="188" alt="emergency-guide" src="https://github.com/user-attachments/assets/8e79375f-6c5d-4c8b-b8af-765d794e3724" />
+  <img width="188" alt="user-guide" src="https://github.com/user-attachments/assets/ceb9af0f-c87f-49e5-9b95-c3c4fd1db3f2" />
+
+</p>
+
+## 📥 Download
+
+<p align="center">
   <img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/5084bee7-56b8-4217-83ce-fd628879411f" width="80" height="80" >
-  <a href="https://github.com/samirsuroshe18/WellBeing-app---Android-studio/releases/latest/">
-<img src="https://github.com/samirsuroshe18/WellBeing-app---Android-studio/assets/130245723/f2d2622b-2fd1-4576-af9e-68ec0e56c79e" height="80">
-</a>
-</div>
+  <br/><br/>
+  <a href="https://github.com/samirsuroshe18/My-ChatApp/releases/tag/2.0.0">
+    <img src="https://img.shields.io/badge/Download%20APK-blue?style=for-the-badge&logo=android" alt="Download APK"/>
+  </a>
+</p>
 
+## 🚀 Features
+- 👥 Add & Manage Emergency Contacts
+- 📝 Customize Emergency Message
+- ☎️ Access Helpline Numbers
+- 🚑 First Aid Information
+- 🚨 Emergency Mode → Sends SOS + 📍 Live Location to contacts
 
-<img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/a23e9439-d5be-4ec0-9a23-3a5d8d12ad3c" width="188" >  
-<img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/dbf5ef2c-23c9-4c28-b672-a4212d2b5578" width="188" >  
-<img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/f6824a6e-f699-44cd-9cd5-427a7a8a5c4e" width="188" >  
-<img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/a030041a-ee6a-4d8a-a9b0-7c7e275bc02c" width="188" > 
-<img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/cb79a896-821c-4b15-8d30-9d72855100ea" width="188" >
+## 🛠️ Tech Stack
+- **Language:** Java  
+- **UI:** XML layouts  
+- **IDE:** Android Studio  
 
-## Project Overview
-Our SOS application is designed to provide quick assistance during emergencies. It allows users to add and manage emergency contacts, customize emergency messages, access helpline numbers, and receive first aid information. The highlight of the app is the Emergency Mode feature, which, when activated, sends an SOS message along with the user's current location to registered emergency contacts. It was created in Dec 2023 and is available for download on Github. Application can be found [here](https://github.com/samirsuroshe18/WellBeing-app---Android-studio/releases/latest/). To use the app, simply download it from the github, and use it.
+## 📲 Installation
+1. Download the APK from the [Releases](https://github.com/samirsuroshe18/My-ChatApp/releases/tag/2.0.0).  
+2. Enable **installation from unknown sources** on your device.  
+3. Tap the APK file to install it.  
+4. Create an account or sign in with Google to start chatting.  
 
-## Configuration Instructions
-To achieve optimum performance, we recommend the following computer and software configurations:
-- Operating System: Android 7.0 (Nougat) or higher
-- Minimum RAM: 1GB
-- Hardware : Accelerometer and Telephony required
-- Storage: 100MB free space
+## ⚙️ For Developers (Setup Guide)
+1. Clone this repo  
+   ```bash
+   git clone https://github.com/samirsuroshe18/SOS-Emergency-App.git
+2. Open in Android Studio
+6. Sync Gradle and run on emulator or device
 
-## Installation Instructions
-To install the SOS Android Application, follow these steps:
-1. Download the APK file from the assets section of the release information.
-2. Enable installation from unknown sources in your device settings.
-3. Open the APK file and follow the on-screen instructions to install the app.
-4. Alternatively, clone the repository and import the project into Android Studio.
-5. Configure the project settings as needed.
-6. Build and run the project on your device or emulator.
+## 📬 Contact
+👨‍💻 Developer: Samir Suroshe  
+📧 Email: [sameersuroshe50@gmail.com](mailto:sameersuroshe50@gmail.com)  
+🔗 LinkedIn: [samir suroshe](https://www.linkedin.com/in/samir-suroshe-50b073271)  
 
-## Operating Instructions
-The SOS App allows users to:
-- Open App
-- Register atleast one emergency contact 
-- Click on Emergency Mode button
-- Click start button
-- Allow location permission
-- Your emergency mode is acivate now shake you phone
-
-## List of Files Included
-- /app: Contains the source code of the Android application.
-  - /src: Contains the Java source code files.
-  - /res: Contains resources such as layout files, images, and strings.
-- /docs: Contains documentation files for the project.
-- /README.md: The README file you are currently reading.
-
-## Contact Information
-For any inquiries or support, please feel free to contact us:
-- Developer: Samir Suroshe
-- Email : [sameersuroshe50@gmail.com](mailto:sameersuroshe50@gmail.com)
-- Linkedin: [samir suroshe](www.linkedin.com/in/samir-suroshe-50b073271)
-
-Your support and contributions are greatly appreciated!
-
-
-
+Your feedback and contributions are always welcome!

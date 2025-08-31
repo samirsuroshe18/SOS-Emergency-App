@@ -61,8 +61,8 @@ The SOS Emergency App is designed to provide quick assistance during emergencies
 6. Sync Gradle and run on emulator or device
 
 ## 📬 Contact
-👨‍💻 Developer: Samir Suroshe
-📧 Email: [sameersuroshe50@gmail.com](mailto:sameersuroshe50@gmail.com)
-🔗 LinkedIn: [samir-suroshe](https://www.linkedin.com/in/samir-suroshe)
+👨‍💻 Developer: Samir Suroshe  
+📧 Email: [sameersuroshe50@gmail.com](mailto:sameersuroshe50@gmail.com)  
+🔗 LinkedIn: [samir-suroshe](https://www.linkedin.com/in/samir-suroshe-50b073271)  
 
 Your feedback and contributions are always welcome!

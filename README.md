@@ -5,7 +5,7 @@ The SOS Emergency App is designed to provide quick assistance during emergencies
 ## 🎥 Demo
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=ScsVUOd-dFw" target="_blank">
+  <a href="https://www.youtube.com/watch?v=3Woo2rMs8ZU" target="_blank">
     <img src="https://img.shields.io/badge/Watch%20on%20YouTube-red?logo=youtube&logoColor=white&style=for-the-badge" alt="Watch on YouTube"/>
   </a>
 </p>
@@ -30,7 +30,7 @@ The SOS Emergency App is designed to provide quick assistance during emergencies
 <p align="center">
   <img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/5084bee7-56b8-4217-83ce-fd628879411f" width="80" height="80" >
   <br/><br/>
-  <a href="https://github.com/samirsuroshe18/My-ChatApp/releases/tag/2.0.0">
+  <a href="https://github.com/samirsuroshe18/SOS-Emergency-App/releases/download/2.0.0/app-debug.apk">
     <img src="https://img.shields.io/badge/Download%20APK-blue?style=for-the-badge&logo=android" alt="Download APK"/>
   </a>
 </p>
@@ -48,7 +48,7 @@ The SOS Emergency App is designed to provide quick assistance during emergencies
 - **IDE:** Android Studio  
 
 ## 📲 Installation
-1. Download the APK from the [Releases](https://github.com/samirsuroshe18/My-ChatApp/releases/tag/2.0.0).  
+1. Download the APK from the [Releases](https://github.com/samirsuroshe18/SOS-Emergency-App/releases/tag/2.0.0).  
 2. Enable **installation from unknown sources** on your device.  
 3. Tap the APK file to install it.  
 4. Create an account or sign in with Google to start chatting.  
@@ -61,8 +61,8 @@ The SOS Emergency App is designed to provide quick assistance during emergencies
 6. Sync Gradle and run on emulator or device
 
 ## 📬 Contact
-👨‍💻 Developer: Samir Suroshe  
-📧 Email: [sameersuroshe50@gmail.com](mailto:sameersuroshe50@gmail.com)  
-🔗 LinkedIn: [samir suroshe](https://www.linkedin.com/in/samir-suroshe-50b073271)  
+👨‍💻 Developer: Samir Suroshe
+📧 Email: [sameersuroshe50@gmail.com](mailto:sameersuroshe50@gmail.com)
+🔗 LinkedIn: [samir-suroshe](https://www.linkedin.com/in/samir-suroshe)
 
 Your feedback and contributions are always welcome!

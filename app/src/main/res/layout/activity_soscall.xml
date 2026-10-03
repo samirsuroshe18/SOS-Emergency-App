@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SosCall"
     android:orientation="vertical"
-    android:id="@+id/lay1">
+    >
 
     <!-- App Bar -->
     <com.google.android.material.appbar.AppBarLayout
@@ -24,11 +25,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
             app:navigationIcon="@drawable/arrow_back"
-            app:navigationIconTint="?attr/colorOnPrimary"
-            app:title="Emergency Helpline"
-            app:titleTextColor="?attr/colorOnPrimary" />
+            app:title="Emergency Helpline" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -53,9 +51,7 @@
                 android:layout_marginTop="50dp"
                 android:background="@drawable/background"
                 android:orientation="vertical"
-                android:padding="5dp"
-
-                >
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/text1"

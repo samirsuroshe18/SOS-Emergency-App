@@ -2,85 +2,71 @@ package com.example.sos;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.color.DynamicColors;
 
 public class HomeActivity extends AppCompatActivity {
 
-    CardView registerContact, editMessage,sosguid,helpline, showContact,Info, btnSosService;
-
+    CardView registerContact, editMessage, sosGuide,helpline, showContact,Info, btnSosService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         DynamicColors.applyToActivitiesIfAvailable(getApplication());
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
         registerContact = findViewById(R.id.registerContact);
+        showContact = findViewById(R.id.showContact);
         editMessage = findViewById(R.id.editMessage);
         btnSosService = findViewById(R.id.btnSosService);
-        sosguid = findViewById(R.id.sosguid);
         helpline = findViewById(R.id.helpline);
         Info = findViewById(R.id.Info);
-        showContact = findViewById(R.id.showContact);
+        sosGuide = findViewById(R.id.sosGuide);
 
-
-        registerContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, RegisterNumberActivity.class);
-                startActivity(intent);
-            }
+        registerContact.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, RegisterNumberActivity.class);
+            startActivity(intent);
         });
 
-        editMessage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, EditMessageActivity.class);
-                startActivity(intent);
-            }
+        showContact.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, ShowContact.class);
+            startActivity(intent);
         });
 
-        btnSosService.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-        sosguid.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(HomeActivity.this, Guide.class);
-                startActivity(intent);
-            }
-        });
-        helpline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(HomeActivity.this, SosCall.class);
-                startActivity(intent);
-            }
-        });
-        Info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, Instructions.class);
-                startActivity(intent);
-
-            }
+        editMessage.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, EditMessageActivity.class);
+            startActivity(intent);
         });
 
-        showContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ShowContact.class);
-                startActivity(intent);
-            }
+        btnSosService.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        helpline.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, SosCall.class);
+            startActivity(intent);
+        });
+
+        Info.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, Instructions.class);
+            startActivity(intent);
+        });
+
+        sosGuide.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, Guide.class);
+            startActivity(intent);
         });
     }
 }

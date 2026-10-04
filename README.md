@@ -30,7 +30,7 @@ The SOS Emergency App is designed to provide quick assistance during emergencies
 <p align="center">
   <img src="https://github.com/samirsuroshe18/SOS-Emergency-App/assets/130245723/5084bee7-56b8-4217-83ce-fd628879411f" width="80" height="80" >
   <br/><br/>
-  <a href="https://github.com/samirsuroshe18/SOS-Emergency-App/releases/download/2.0.0/app-debug.apk">
+  <a href="https://github.com/samirsuroshe18/SOS-Emergency-App/releases/latest">
     <img src="https://img.shields.io/badge/Download%20APK-blue?style=for-the-badge&logo=android" alt="Download APK"/>
   </a>
 </p>
@@ -40,29 +40,45 @@ The SOS Emergency App is designed to provide quick assistance during emergencies
 - 📝 Customize Emergency Message
 - ☎️ Access Helpline Numbers
 - 🚑 First Aid Information
-- 🚨 Emergency Mode → Sends SOS + 📍 Live Location to contacts
+- 📞 Call a saved contact or a helpline from the app
+- 🚨 Emergency Mode → shake the phone to send an SOS SMS with 📍 your current location to every contact
+
+The alert is a normal SMS sent from your SIM, so your carrier's SMS charges apply.
+The helpline numbers are the ones used in India.
 
 ## 🛠️ Tech Stack
 - **Language:** Java  
 - **UI:** XML layouts  
+- **Storage:** SQLite (contacts), SharedPreferences (message)
+- **Location:** Google Play services Fused Location Provider
+- **Alert:** accelerometer shake detection in a foreground service, SMS through SmsManager
 - **IDE:** Android Studio  
 
 ## 📲 Installation
-1. Download the APK from the [Releases](https://github.com/samirsuroshe18/SOS-Emergency-App/releases/tag/2.0.0).  
+1. Download the APK from the [Releases](https://github.com/samirsuroshe18/SOS-Emergency-App/releases/latest).  
 2. Enable **installation from unknown sources** on your device.  
 3. Tap the APK file to install it.  
-4. Create an account or sign in with Google to start chatting.  
+4. Add at least one emergency contact, open **Emergency SOS** and start monitoring.
+5. Allow the SMS and location permissions when asked, and keep location turned on.  
 
 ## ⚙️ For Developers (Setup Guide)
-1. Clone this repo  
+1. Clone this repo
    ```bash
    git clone https://github.com/samirsuroshe18/SOS-Emergency-App.git
-2. Open in Android Studio
-6. Sync Gradle and run on emulator or device
+   ```
+2. Open the project in Android Studio.
+3. Sync Gradle and run on a device.
+
+The alert needs a real phone with a SIM: an emulator has no shake sensor to
+speak of and cannot send a real SMS.
 
 ## 📬 Contact  
 👨‍💻 Developer: Samir Suroshe  <br>
 📧 Email: [sameersuroshe50@gmail.com](mailto:sameersuroshe50@gmail.com)  <br>
-🔗 LinkedIn: [samir-suroshe](https://www.linkedin.com/in/samir-suroshe-50b073271)  
+🔗 LinkedIn: [samir-suroshe](https://www.linkedin.com/in/samir-suroshe)  
 
 Your feedback and contributions are always welcome!
+
+## License
+
+[MIT](LICENSE)

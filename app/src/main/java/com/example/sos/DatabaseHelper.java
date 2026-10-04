@@ -72,6 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             model.number = result.getString(2);
             dataArrayList.add(model);
         }
+        result.close();
         return dataArrayList;
     }
 

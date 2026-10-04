@@ -15,10 +15,13 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.telephony.SmsManager;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,9 +30,8 @@ import androidx.core.app.ActivityCompat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.Priority;
-import com.google.android.gms.tasks.CancellationToken;
+import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.OnTokenCanceledListener;
 
 import java.util.ArrayList;
 
@@ -43,8 +45,12 @@ public class ServiceMine extends Service implements SensorEventListener {
     private Sensor accelerometer;
     private long lastShakeTime;
     private static final int SHAKE_THRESHOLD = 90;
+    // How long an alert waits for a fresh position before it goes out with the last known one
+    private static final long LOCATION_WAIT = 10000;
+    private static final String NO_LOCATION = "Unable to Find Location :(";
     SmsManager manager = SmsManager.getDefault();
-    String myLocation;
+    String myLocation = NO_LOCATION;
+    private final Handler handler = new Handler(Looper.getMainLooper());
 
     @Override
     public void onCreate() {
@@ -69,27 +75,66 @@ public class ServiceMine extends Service implements SensorEventListener {
             return;
         }
 
-        //Get the current location of user
-        fusedLocationClient.getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY, new CancellationToken() {
-            @Override
-            public boolean isCancellationRequested() {
-                return false;
-            }
-            @NonNull
-            @Override
-            public CancellationToken onCanceledRequested(@NonNull OnTokenCanceledListener onTokenCanceledListener) {
-                return null;
-            }
-        }).addOnSuccessListener(new OnSuccessListener<Location>() {
+        //Get the current location of user, kept as a fallback for an alert that cannot get a fresh one
+        fusedLocationClient.getCurrentLocation(Priority.PRIORITY_BALANCED_POWER_ACCURACY, new CancellationTokenSource().getToken())
+                .addOnSuccessListener(new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
                 if (location != null) {
-                    myLocation = "https://maps.google.com/maps?q=" + location.getLatitude() + "," + location.getLongitude();
-                } else {
-                    myLocation = "Unable to Find Location :(";
+                    myLocation = mapLink(location);
                 }
             }
         });
+    }
+
+    private static String mapLink(Location location) {
+        return "https://maps.google.com/maps?q=" + location.getLatitude() + "," + location.getLongitude();
+    }
+
+    // Sends the alert with the position at the moment of the shake, not the one from when the service started
+    private void sendAlert() {
+        final boolean[] sent = {false};
+        Runnable send = () -> {
+            if (sent[0]) return;
+            sent[0] = true;
+            sendMessages();
+        };
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            send.run();
+            return;
+        }
+
+        // The alert must go out even when no fresh position arrives
+        handler.postDelayed(send, LOCATION_WAIT);
+        fusedLocationClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, new CancellationTokenSource().getToken())
+                .addOnSuccessListener(location -> {
+                    if (location != null && !sent[0]) {
+                        myLocation = mapLink(location);
+                    }
+                    send.run();
+                })
+                .addOnFailureListener(e -> send.run());
+    }
+
+    private void sendMessages() {
+        db = new DatabaseHelper(ServiceMine.this);
+        ArrayList<ContactModel> list = db.fetchData();
+        SharedPreferences sp = getSharedPreferences("message", MODE_PRIVATE);
+        String msg = sp.getString("msg", null);
+        if (msg == null) {
+            msg = "I am in DANGER, i need help. Please urgently reach me out.";
+        }
+        for (ContactModel c : list) {
+            String message = "Hey, " + c.getName() + " " + msg + "\n\nHere are my coordinates :\n" + myLocation;
+            try {
+                // A text longer than one SMS is refused unless it is sent in parts
+                manager.sendMultipartTextMessage(c.getNumber(), null, manager.divideMessage(message), null, null);
+            } catch (Exception e) {
+                // One bad number must not stop the alert for the other contacts
+                Log.e("ServiceMine", "Could not send the alert to " + c.getName(), e);
+            }
+        }
     }
 
     @Override
@@ -100,7 +145,8 @@ public class ServiceMine extends Service implements SensorEventListener {
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
         }
 
-        if (intent.getAction().equalsIgnoreCase("STOP")) {
+        String action = intent != null ? intent.getAction() : null;
+        if ("STOP".equalsIgnoreCase(action)) {
             if(isRunning) {
                 sensorManager.unregisterListener(this);
                 this.stopForeground(true);
@@ -150,24 +196,8 @@ public class ServiceMine extends Service implements SensorEventListener {
 
 
 
-                    db = new DatabaseHelper(ServiceMine.this);
-                    ArrayList<ContactModel> list = db.fetchData();
-                    SharedPreferences sp = getSharedPreferences("message", MODE_PRIVATE);
-                    String msg = sp.getString("msg", null);
-                    if (msg != null) {
-                        for (ContactModel c : list) {
-                            String message = "Hey, " + c.getName() + " " + msg + "\n\nHere are my coordinates :\n" + myLocation;
-                            manager.sendTextMessage(c.getNumber(), null, message, null, null);
-                        }
-                    }
-                    else {
-                        for (ContactModel c : list) {
-                            manager.sendTextMessage(c.getNumber(), null,
-                                    "Hey, " + c.getName() +" I am in DANGER, i need help. Please urgently reach me out. "+"\n\nHere are my coordinates :\n" + myLocation, null, null);
-                        }
-                    }
-
                     lastShakeTime = currentTime;
+                    sendAlert();
                 }
             }
         }

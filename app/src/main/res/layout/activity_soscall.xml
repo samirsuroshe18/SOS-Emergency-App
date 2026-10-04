@@ -123,7 +123,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Disaster Managment: 104"
+                    android:text="Disaster Managment: 1078"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -188,7 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Fire Managment: 104"
+                    android:text="Fire Managment: 101"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 

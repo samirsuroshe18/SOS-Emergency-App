@@ -61,6 +61,13 @@ The helpline numbers are the ones used in India.
 4. Add at least one emergency contact, open **Emergency SOS** and start monitoring.
 5. Allow the SMS and location permissions when asked, and keep location turned on.  
 
+**If you see "App was denied access to SMS"** (Android 13 and later): Android
+blocks the SMS permission for apps installed from an APK file until you allow it.
+1. Close the message.
+2. Open **Settings → Apps → SOS** (or long-press the app icon → **App info**).
+3. Tap the three dots in the top-right corner → **Allow restricted settings**, and confirm.
+4. Go back to the app and tap **Start Monitoring** again, then allow the SMS permission.
+
 ## ⚙️ For Developers (Setup Guide)
 1. Clone this repo
    ```bash

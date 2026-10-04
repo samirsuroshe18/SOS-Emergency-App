@@ -18,6 +18,10 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                // The splash was closed before the wait ended
+                if (isFinishing() || isDestroyed()) {
+                    return;
+                }
                 Intent I = new Intent(SplashScreen.this, HomeActivity.class);
                 startActivity(I);
                 finish();

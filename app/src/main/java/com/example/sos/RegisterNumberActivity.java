@@ -56,11 +56,15 @@ public class RegisterNumberActivity extends AppCompatActivity {
        btnAddContact.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               String name = contactName.getText().toString();
-               String number = contactNumber.getText().toString();
+               String name = contactName.getText().toString().trim();
+               String number = contactNumber.getText().toString().trim();
                 int a = databaseHelper.count();
 
                if ( a < 5) {
+                   if (name.isEmpty()){
+                       contactName.setError("Enter name");
+                       return;
+                   }
                    if (number.length()!=10){
                        contactNumber.setError("Enter valid number");
                        return;
@@ -107,7 +111,7 @@ public class RegisterNumberActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_CONTACT) {
-            if (resultCode == Activity.RESULT_OK) {
+            if (resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
 
                 Uri contactData = data.getData();
                 Cursor c = managedQuery(contactData, null, null, null, null);
@@ -134,7 +138,15 @@ public class RegisterNumberActivity extends AppCompatActivity {
                                 }
 
                             }
+                            if (phones != null) {
+                                phones.close();
+                            }
 
+                        }
+                        // An alert cannot reach a contact that has no number
+                        if (phone == null || phone.trim().isEmpty()) {
+                            Toast.makeText(this, "This contact has no phone number", Toast.LENGTH_SHORT).show();
+                            return;
                         }
                         int a = databaseHelper.count();
                         if (a < 5) {
@@ -164,7 +176,7 @@ public class RegisterNumberActivity extends AppCompatActivity {
                 // Permission granted, make the phone call
                 Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
                 startActivityForResult(intent, PICK_CONTACT);
-                Toast.makeText(this, "Call permission granted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Contacts permission granted", Toast.LENGTH_SHORT).show();
             } else {
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS)) {
 

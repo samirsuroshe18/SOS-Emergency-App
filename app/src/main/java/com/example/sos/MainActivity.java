@@ -319,14 +319,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void stopServiceV(View view) {
 
-        Intent notificationIntent = new Intent(this,ServiceMine.class);
-        notificationIntent.setAction("stop");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            getApplicationContext().startForegroundService(notificationIntent);
-            Snackbar.make(findViewById(android.R.id.content),"Service Stopped!", Snackbar.LENGTH_LONG).show();
-            isServiceActive = false;
-            updateServiceStatus();
-        }
+        // Stopping it directly also works when the service is no longer running
+        stopService(new Intent(this, ServiceMine.class));
+        Snackbar.make(findViewById(android.R.id.content),"Service Stopped!", Snackbar.LENGTH_LONG).show();
+        isServiceActive = false;
+        updateServiceStatus();
     }
 
     public void startServiceV(View view) {
@@ -402,9 +399,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            if (allPermissionsGranted) {
-                // All permissions are granted, you can proceed with your tasks.
-                // For example, start your main activity or perform other operations.
+            if (allPermissionsGranted && grantResults.length > 0) {
+                // Carry on with the start the user asked for
+                startServiceV(null);
 
             } else {
                 // Some or all permissions were denied. Handle this situation.
